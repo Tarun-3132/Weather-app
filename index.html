@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stunning Weather App</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Weather Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Local Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Search Section -->
+        <header class="search-section">
+            <div class="search-box">
+                <i class="fa-solid fa-location-dot location-icon"></i>
+                <input type="text" id="city-input" placeholder="Search for a city..." autocomplete="off">
+                <button id="search-btn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div id="error-message" class="error-message">City not found. Please try again.</div>
+        </header>
+
+        <!-- Main Weather Section -->
+        <main class="weather-content" id="weather-content">
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading">
+                <div class="spinner"></div>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <div class="weather-results" id="weather-results">
+                <!-- Current Weather -->
+                <section class="current-weather glass-card">
+                    <div class="current-header">
+                        <h1 id="city-name">New York, US</h1>
+                        <p id="current-date">Wed, 12 Oct</p>
+                    </div>
+                    <div class="current-body">
+                        <div class="temperature-box">
+                            <i id="current-icon" class="fa-solid fa-sun weather-main-icon"></i>
+                            <div class="temp-info">
+                                <span class="temp" id="current-temp">22°</span>
+                                <span class="desc" id="current-desc">Clear Sky</span>
+                            </div>
+                        </div>
+                        <div class="details-box">
+                            <div class="detail">
+                                <i class="fa-solid fa-droplet"></i>
+                                <div>
+                                    <span class="detail-value" id="current-humidity">45%</span>
+                                    <span class="detail-label">Humidity</span>
+                                </div>
+                            </div>
+                            <div class="detail">
+                                <i class="fa-solid fa-wind"></i>
+                                <div>
+                                    <span class="detail-value" id="current-wind">12 km/h</span>
+                                    <span class="detail-label">Wind Speed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 5-Day Forecast -->
+                <section class="forecast-section">
+                    <h2>5-Day Forecast</h2>
+                    <div class="forecast-grid" id="forecast-grid">
+                        <!-- Forecast items will be injected by JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
